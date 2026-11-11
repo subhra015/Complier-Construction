@@ -1,6 +1,6 @@
 
 %{
-//Sanvi Wadhankar 24070521191 
+//Subhrajeet Ganguly 24070521201
 #include <stdio.h>
 void decimal_to_hex(int num) {
     char hex[100];
