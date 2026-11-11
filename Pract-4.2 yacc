@@ -1,0 +1,32 @@
+%{
+
+#include <stdio.h>
+ int yylex(void);
+//Subhrajeet Ganguly 24070521201
+void yyerror(const char *s);
+%}
+
+%token NUM
+%%
+E :E '+' T
+| T
+;
+T: T'*' F;
+| F
+;
+F : '(' E ')'
+| NUM
+;
+%% 
+void yyerror(const char *s)
+{ 
+printf("Invalid Expression\n");
+}
+int main()
+{
+
+printf("Enter Expression: \n"); 
+if (yyparse() == 0)
+printf("Valid Expression\n");
+return 0;
+}
